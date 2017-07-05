@@ -1,7 +1,6 @@
 #!flask/bin/python
 
 import os
-
 from flask import Flask, jsonify, make_response
 from flask_cors import CORS, cross_origin
 
@@ -35,7 +34,10 @@ def internal_server_error(error):
 @application.route('/<path:path>')  # Catch All urls, enabling copy-paste url
 @cross_origin()
 def home(path):
-    return jsonify({'Status': "Failed", "Message": "Hold on. I have not implemented this yet."})
+    return jsonify({'Status': "Failed", "Message": "Hold on. I have not implemented this yet. "
+                                                   "Or you can help me implement this feature? "
+                                                   "Head on over to github.com/ttpqc/py "
+                                                   "and submit a pull request today!"})
 
 
 @application.errorhandler(404)
